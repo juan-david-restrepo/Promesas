@@ -15,7 +15,13 @@ function enviarCorreo(destino, asunto, mensaje){ // Función para enviar un corr
         from: 'nodemailerenviar@gmail.com', // el correo desde el que se envia
         to: destino, // el destino
         subject: "Prueba de correo masivo", // titulo como tal del correo envido
-        text: "Correo masivo de prueba" // lo que le aparece para leer a la persona
+        html: `
+            <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f5f5f5; border-radius: 10px;">
+                <h2 style= "color: #333;"> ${asunto} </h2>
+                <p style= "font-size: 16px; color: #555;">${mensaje}</p>
+                <p style= "font-size: 14px; color: #888;">Correo masivo de prueba <strong> nodemailer </strong> </p> 
+            </div> 
+            ` // lo que le aparece para leer a la persona
     }
 
     return tranportador.sendMail(mailOpciones);
@@ -30,7 +36,7 @@ const listaPersonas = [ // creo el array para almacenar los correos
 ]
 
 const promesasEnvio = listaPersonas.map((email) =>{
-    return enviarCorreo(email, 'correo masivoo', 'IMPORTANTE') // Para cada email en la lista, llame a la función enviarCorreo, que devuelve una promesa.
+    return enviarCorreo(email, 'correo masivoo', 'IMPORTANTE Prueba Correo') // Para cada email en la lista, llame a la función enviarCorreo, que devuelve una promesa.
 })
 
 
