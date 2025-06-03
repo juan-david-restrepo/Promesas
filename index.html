@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Envio de correos</title>
+</head>
+<body>
+    <main>
+        <h1>ENVIO MASIVO DE CORREOS</h1>
+        <form id="mailOpciones">
+            <div>
+                <label for="from">Remitente</label>
+                <input type="email" id="from" name="from" placeholder="tuCorreo@gmail.com" required>
+            </div>
+
+            <div>
+                <label for="to">Destinatario</label>
+                <textarea id="to" name="to" placeholder="tuCorreo@gmail.com" required></textarea>
+            </div>
+
+            <div>
+                <label for="subject">Asunto</label>
+                <textarea id="subject" name="subject" placeholder="Asunto del correo" required></textarea>
+            </div>
+
+            <div>
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
+            </div>
+
+            <button type="submit">Enviar Correos</button>
+        </form>
+
+        <div id="status"></div>
+        <div id="error"></div>
+    </main>
+
+    <script>
+        document.getElementById(' mailOpciones').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            document.getElementById('status').textContent = 'Correos enviados';
+
+
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value.split(',').map(email => email.trim());
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+        });
+    </script>
+</body>
+</html>
