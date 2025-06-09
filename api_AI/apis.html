@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Gemini API App</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>AI</h1>
+
+        <textarea id="inputText" placeholder="Escribe tu pregunta o texto aquí..."></textarea>
+
+        <button onclick="enviarIA()">Enviar Mensaje</button>
+
+        <div class="loader" id="loader"></div>
+
+        <h2>Respuesta Mistral:</h2>
+        <div class="respuesta" id="responseContainer"></div>
+
+        <h2>Respuesta Gemini:</h2>
+        <div class="respuesta" id="responseContainer2"></div>
+
+        <h2>Respuesta Zephyr:</h2>
+        <div class="respuesta" id="responseContainer3"></div>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
